@@ -1,9 +1,15 @@
 import React from "react";
-import PostContainer from "./PostContainer";
+import TopicContainer from "./TopicContainer";
+import NavBar from "../components/NavBar";
+import Sidebar from "../components/Sidebar";
 
-class HomeContainer extends Component {
+class HomeContainer extends React.Component {
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <h1>HOME</h1>
+      </div>
+    );
   }
 }
 

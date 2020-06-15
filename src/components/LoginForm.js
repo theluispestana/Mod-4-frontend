@@ -1,7 +1,7 @@
 import React from "react";
-import * as requests from "./requests";
+import * as requests from "../requests";
 
-class LoginForm extends Component {
+class LoginForm extends React.Component {
   state = {};
 
   render() {

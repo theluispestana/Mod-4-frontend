@@ -1,10 +1,10 @@
 import React from "react";
-import * as requests from "./requests";
+import * as requests from "../requests";
 
-class Navbar extends Component {
+class NavBar extends React.Component {
   render() {
     return <div></div>;
   }
 }
 
-export default Navbar;
+export default NavBar;

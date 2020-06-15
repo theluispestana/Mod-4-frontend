@@ -1,5 +1,5 @@
 import React from "react";
-import * as requests from "./requests";
+import * as requests from "../requests";
 
 const Sidebar = () => {
   return <div></div>;
