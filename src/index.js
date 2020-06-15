@@ -4,14 +4,16 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import SignUp from "./components/signUpQuizFolder/SignUp"
 
 ReactDOM.render(
   <Router>
-    <App />
+    {/* <App /> */}
     {/* <div> */}
-    {/*   <Route exact path="/" component={WelcomeContainer} /> */}
+    <Route exact path="/" component={App} />
     {/*   <Route exact path="/signup" component={SignUpContainer} /> */}
     {/*   <Route exact path="/home" component={HomeContainer} /> */}
+    <Route exact path="/signUp" component={SignUp} />
     {/* </div> */}
   </Router>,
   document.getElementById("root")
