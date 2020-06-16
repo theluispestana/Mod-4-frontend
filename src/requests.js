@@ -10,13 +10,14 @@ const headers = {
 };
 
 const headersAuth = {
-  headers,
+  "Content-Type": "application/json",
+  Accepts: "application/json",
   Authorization: `Bearer ${localStorage.getItem("token")}`,
 };
 
 // second arg for fetch
 // simple get
-const getRequest = { method: "GET", headersAuth };
+const getRequest = { method: "GET", headers: headersAuth };
 
 // parse incoming data
 const parseData = (response) => response.json();

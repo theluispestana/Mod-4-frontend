@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router";
 import * as requests from "../requests";
 
 class LoginForm extends React.Component {
@@ -15,14 +16,16 @@ class LoginForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    requests
-      .loginUser(this.state)
-      .then((json) => localStorage.setItem("token", json.jwt));
+    requests.loginUser(this.state).then((json) => {
+      console.log(json.jwt);
+      localStorage.setItem("token", json.jwt);
+    });
   };
 
   render() {
     return (
       <div>
+        {localStorage.token ? <Redirect to="/home" /> : null}
         <form onChange={this.handleChange}>
           <input type="text" name="name" placeholder="Username" />
           <input type="password" name="password" placeholder="password" />
