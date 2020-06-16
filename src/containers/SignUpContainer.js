@@ -4,10 +4,6 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 class SignUpContainer extends React.Component {
   state = {
-    name: "",
-    age: 0,
-    zipcode: 0,
-    image: "",
     group: "",
     toggle: false,
     redirect: false,
@@ -21,27 +17,45 @@ class SignUpContainer extends React.Component {
 
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to="/signUp" />;
+      return <Redirect to="/home" />;
     }
   };
 
   handlerGroup = (groupData) => {
     this.setState({
-      group: groupData.name,
+      group: groupData,
     });
   };
 
   handlerSubmit = (e) => {
     e.preventDefault();
-    this.setState({
-      name: e.target.name.value,
-      age: e.target.age.value,
-      zipcode: e.target.zipcode.value,
-      image: e.target.image.value,
-      redirect: true,
-    });
+    e.persist()
     if (e.target.age.value < 21) {
       alert("You must be an adult to continue");
+    } else if(e.target.password.value !== e.target.confirmation.value){
+      alert("Password does not match");
+    } else{
+      fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          user:{
+          name: e.target.name.value,
+          password: e.target.password.value,
+          age: e.target.age.value,
+          zip: e.target.zipcode.value,
+          picture: e.target.image.value,
+          group_id: this.state.group.id
+          }
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        this.setState({ redirect: true })
+      })    
     }
     setTimeout(() => {
       console.log(this.state);
@@ -51,7 +65,7 @@ class SignUpContainer extends React.Component {
   render() {
     return (
       <div className="SignUpContainer">
-        Welcome!
+        {this.state.toggle ? "" : "Welcome!"}
         <div>
           {this.renderRedirect()}
           {this.state.toggle ? (
@@ -63,9 +77,6 @@ class SignUpContainer extends React.Component {
             <button onClick={this.handlerQuiz}>Take our Quiz</button>
           )}
         </div>
-        {/* <div>
-          <button>Log In</button>
-        </div> */}
       </div>
     );
   }

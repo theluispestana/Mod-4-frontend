@@ -14,6 +14,8 @@ export default class Groups extends React.Component{
                     <h3>Follow along to finalize your sign up</h3>
                     <ul>
                         <li><input type='text' name="name" placeholder="Your Name"/> </li>
+                        <li><input type='password' name="password" placeholder="Password"/></li>
+                        <li><input type='password' name="confirmation" placeholder="Confirm Password"/></li>
                         <li><input type='number' name="age" placeholder="Your Age"/></li>
                         <li><input type='number' name="zipcode" placeholder="Your Zipcode"/></li>
                         <li><input type='text' name="image" placeholder="Your Picture (optional)"/></li>
