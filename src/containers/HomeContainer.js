@@ -6,8 +6,9 @@ import Sidebar from "../components/Sidebar";
 class HomeContainer extends React.Component {
   render() {
     return (
-      <div>
+      <div className="home">
         <h1>HOME</h1>
+        <TopicContainer />
       </div>
     );
   }
