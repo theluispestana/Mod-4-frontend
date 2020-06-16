@@ -8,12 +8,14 @@ class TopicContainer extends React.Component {
   };
 
   componentDidMount() {
-    requests.fetchTopics().then((topics) => this.setState({ topics }));
+    requests.fetchTopics().then((topics) => {
+      this.setState({ topics });
+    });
   }
 
   render() {
     const topics = this.state.topics;
-    console.log("topics: ", topics);
+    // console.log("topics: ", topics);
     return (
       <div>
         {topics.map((topic) => (

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Comment = (props) => {
-  console.log("comments props: ", props);
+  // console.log("comments props: ", props);
   const { content, created_at: createdAt, likesCount, user } = props.comment;
   return (
     <div>

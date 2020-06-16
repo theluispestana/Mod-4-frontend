@@ -19,6 +19,7 @@ class LoginForm extends React.Component {
     requests.loginUser(this.state).then((json) => {
       console.log(json.jwt);
       localStorage.setItem("token", json.jwt);
+      this.setState(this.state);
     });
   };
 
