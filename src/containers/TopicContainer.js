@@ -13,11 +13,13 @@ class TopicContainer extends React.Component {
 
   render() {
     const topics = this.state.topics;
-    console.log("topics: ", topics);
+    // console.log("topics: ", topics);
     return (
-      <div>
+      <div >
         {topics.map((topic) => (
+          <div className="topic">
           <Topic key={topic.id} topic={topic} preview={true} />
+          </div>
         ))}
       </div>
     );

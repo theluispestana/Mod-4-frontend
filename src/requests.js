@@ -2,6 +2,7 @@
 const baseUrl = "http://localhost:3000";
 const topicsUrl = `${baseUrl}/topics/`;
 const authUrl = `${baseUrl}/login`;
+const likesUrl = `${baseUrl}/likes`;
 
 // headers --> use these at your own discretion
 const headers = {
@@ -30,6 +31,9 @@ const catchError = (error) => console.log(`%c${error}`, "color: red;");
 export const fetchTopics = () =>
   fetch(topicsUrl, getRequest).then(parseData).catch(catchError);
 
+export const fetchLikes = () =>
+  fetch(likesUrl, getRequest).then(parseData).catch(catchError);
+
 // login user
 // return promise with token
 export const loginUser = (arg) =>
@@ -37,6 +41,16 @@ export const loginUser = (arg) =>
     method: "POST",
     headers: headers,
     body: JSON.stringify({ user: arg }),
+  })
+    .then(parseData)
+    .catch(catchError);
+
+
+export const newLike = (arg1, arg2) =>
+  fetch(likesUrl, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify({ user_id: arg1,  topic_id: arg2}),
   })
     .then(parseData)
     .catch(catchError);
