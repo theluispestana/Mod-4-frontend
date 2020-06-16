@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navbar";
 import WelcomeContainer from "./containers/WelcomeContainer";
 import SignUpContainer from "./containers/SignUpContainer";
 import HomeContainer from "./containers/HomeContainer";
@@ -10,9 +10,9 @@ import "./App.css";
 function App() {
   return (
     <Router>
+      <NavBar />
       <Route exact path="/" component={WelcomeContainer} />
       <Route exact path="/signup" component={SignUpContainer} />
-      <NavBar />
       <Route exact path="/home" component={HomeContainer} />
     </Router>
   );
