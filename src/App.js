@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavBar from "./components/Navbar";
+import NavBar from "./components/NavBar";
 import WelcomeContainer from "./containers/WelcomeContainer";
 import SignUpContainer from "./containers/SignUpContainer";
 import HomeContainer from "./containers/HomeContainer";
