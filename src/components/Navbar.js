@@ -30,16 +30,16 @@ class NavBar extends React.Component {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/home">Home</Link>
-                <Link to={`/user/${this.state.user.id}`}>
-                  {this.state.user.name}
-                </Link>
+                <a className="nav-link" href={`/user/${this.state.user.id}`}>{this.state.user.name}</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Sign Up</a>
+                <a className="nav-link" href='/home'>Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Log In</a>
+                <a className="nav-link" href='/'>Log In</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href='/signup'>Sign up</a>
               </li>
             </ul>
           </div>
