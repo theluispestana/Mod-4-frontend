@@ -91,6 +91,8 @@ ul {
 }
 
 .homeText {
+  position: relative;
+  left: 70px;
   font-size: 400%;
   text-align: center;
   letter-spacing: 2em; 
@@ -132,11 +134,11 @@ ul {
 }
 
 .progressBarContainer { 
-  position: relative;
+  position: absolute;
   margin-top: 10px; 
   margin-bottom: 10px;
   left: 900px;
-  bottom: 115px;
+  bottom: 100px;
 }
 
 .list-group-item {
@@ -151,4 +153,20 @@ ul {
 .dislikeBtn {
   background-color: crimson;
   border-radius: 10px;
+}
+
+#likeDislikeBtn{
+  margin-top: 25px;
+  margin-left: 125px;
+  margin-bottom: 25px;
+}
+
+.topicImg {
+  width: 600px;
+  height: 400px
+}
+
+#nextFourTopic {
+  position: relative;
+  left: 860px;
 }
