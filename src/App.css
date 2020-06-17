@@ -80,6 +80,8 @@ ul {
 }
 
 .SignUpContainer {
+  width: 100vw;
+  height: 100vh;
   text-align: center;
   background-color: #000000;
   color: #ffffff;
@@ -102,6 +104,22 @@ ul {
   text-align: center;
 }
 
+.welcomeDiv {
+  text-align: center;
+}
+.welcomeImg {
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/* h4 {
+  background-color: white;
+} */
 
 .progress-bar-vertical {
   width: 20px;
@@ -169,4 +187,46 @@ ul {
 #nextFourTopic {
   position: relative;
   left: 860px;
+}
+
+#userlink {
+  position: absolute;
+  margin-top: 7px;
+  right: 15px;
+}
+
+.userProfileDiv{
+  text-align: center;
+}
+
+#EditProfileBtn {
+  position: relative;
+  left: 650px;
+}
+
+.UserEditImg {
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+#userEditPic {
+  width: 400px;
+  height: 560px
+}
+
+#alltopics {
+  background-image: url("https://www.inboundwriter.com/wp-content/uploads/2019/08/topic_mobile_header.png");
+  background-repeat: repeat-y;
+  /* background-position: center; */
+  /* width: 100px; */
+  background-size: 1450px;
+}
+
+#EditForm {
+  text-align: center;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import * as requests from "../requests";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 
 class NavBar extends React.Component {
   state = {
@@ -10,6 +10,12 @@ class NavBar extends React.Component {
   componentDidMount() {
     requests.fetchProfile().then((user) => this.setState({ user }));
   }
+
+  // handlerSignout = () => {
+  //   localStorage.clear()
+  //   const history = useHistory()
+  //   history.push('/')
+  // }
 
   render() {
     return (
@@ -34,6 +40,7 @@ class NavBar extends React.Component {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link
+                  id="userlink"
                   to={{
                     pathname: `/user/${this.state.user.id}`,
                     state: { user: this.state.user, link: true, self: true },
@@ -52,7 +59,8 @@ class NavBar extends React.Component {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/">
-                  Log In
+                  {" "}
+                  Log In{" "}
                 </a>
               </li>
               <li className="nav-item">
@@ -60,6 +68,9 @@ class NavBar extends React.Component {
                   Sign up
                 </a>
               </li>
+              {/* <li className="nav-item">
+                <button id='' className='btn btn-danger' onClick={this.handlerSignout}>Logout</button>
+                </li> */}
             </ul>
           </div>
         </nav>

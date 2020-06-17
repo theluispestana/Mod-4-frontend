@@ -6,7 +6,7 @@ import TopicContainer from "./TopicContainer";
 class Container extends React.Component {
   render() {
     return (
-      <div >
+      <div id="alltopics">
         <h1 className="homeText">Topics</h1>
         <TopicContainer />
       </div>

@@ -38,12 +38,13 @@ class User extends React.Component {
   renderProfile = () => {
     const { name, picture, age } = this.state.user;
     return (
-      <>
+      <div className="userProfileDiv">
+        <img className="UserEditImg" src="https://www.inboundwriter.com/wp-content/uploads/2019/08/topic_mobile_header.png" alt="welcome image"/>
         <h1>Profile</h1>
-        <p>Name: {name}</p>
-        <p>Picture: {picture}</p>
-        <p>Age: {age}</p>
-      </>
+        <h4>Name: {name}</h4>
+        <p><img id="userEditPic" src={picture} alt={name} /></p>
+        <h5>Age: {age}</h5>
+      </div>
     );
   };
 
@@ -52,25 +53,44 @@ class User extends React.Component {
     const { name, picture, age } = this.state.user;
     return (
       <>
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          name="picture"
-          value={picture}
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          name="age"
-          value={age}
-          onChange={this.handleChange}
-        />
-        <input type="submit" value="Save Changes" onClick={this.handleSubmit} />
+        <img className="UserEditImg" src="https://www.inboundwriter.com/wp-content/uploads/2019/08/topic_mobile_header.png" alt="welcome image"/>
+      <form id="EditForm">
+
+        <div class="form-group">
+        <label class="control-label col-sm-2" for="name"><h3>Name:</h3></label>
+            <input
+              className="form-control"
+              type="text"
+              name="name"
+              value={name}
+              onChange={this.handleChange}
+            />
+        </div>
+
+        <div class="form-group">
+        <label class="control-label col-sm-2" for="name"><h3>Picture:</h3></label>
+          <input
+            className="form-control"
+            type="text"
+            name="picture"
+            value={picture}
+            onChange={this.handleChange}
+          />
+        </div>
+
+        <div class="form-group">
+        <label class="control-label col-sm-2" for="name"><h3>Age:</h3></label>
+          <input
+            className="form-control"
+            type="text"
+            name="age"
+            value={age}
+            onChange={this.handleChange}
+          />
+          </div>
+        <input type="submit" className="btn btn-success btn-lg" value="Save Changes" 
+          onClick={this.handleSubmit} />
+      </form>
       </>
     );
   };
@@ -83,6 +103,8 @@ class User extends React.Component {
         {!this.state.edit ? this.renderProfile() : this.renderEditInputs()}
         {this.props.location.state.self && !this.state.edit ? (
           <input
+            id="EditProfileBtn"
+            className="btn btn-info btn-lg"
             type="button"
             value="Edit Profile"
             onClick={this.handleClick}
