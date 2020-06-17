@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        {/* {localStorage.token !== "null" ? <Redirect to="/home" /> : null} */}
+        {localStorage.token !== "null" ? <Redirect to="/home" /> : null}
         <form onChange={this.handleChange}>
           <input type="text" name="name" placeholder="Username" />
           <input type="password" name="password" placeholder="password" />
