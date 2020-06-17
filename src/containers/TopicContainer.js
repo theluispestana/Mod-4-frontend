@@ -4,7 +4,7 @@ import * as requests from "../requests";
 
 class TopicContainer extends React.Component {
   state = {
-    topics: [],
+    topics: []
   };
 
   componentDidMount() {
