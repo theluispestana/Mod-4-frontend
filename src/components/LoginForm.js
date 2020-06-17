@@ -22,13 +22,14 @@ class LoginForm extends React.Component {
       localStorage.setItem("userId", json.user.id)
       localStorage.setItem("userName", json.user.name)
       localStorage.setItem("userGroup", json.user.group_id)
+      this.setState(this.state);
     });
   };
 
   render() {
     return (
       <div>
-        {localStorage.token !== "null" ? <Redirect to="/home" /> : null}
+        {/* {localStorage.token !== "null" ? <Redirect to="/home" /> : null} */}
         <form onChange={this.handleChange}>
           <input type="text" name="name" placeholder="Username" />
           <input type="password" name="password" placeholder="password" />

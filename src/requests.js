@@ -26,11 +26,16 @@ const parseData = (response) => response.json();
 // error handler
 const catchError = (error) => console.log(`%c${error}`, "color: red;");
 
-// fetchs all topics with associated comments
+// fetches all topics with associated comments
 // uses token in local storage for auth
 // return promise
 export const fetchTopics = () =>
   fetch(topicsUrl, getRequest).then(parseData).catch(catchError);
+
+export const fetchTopic = (id) =>
+  fetch(topicsUrl + id, getRequest)
+    .then(parseData)
+    .catch(catchError);
 
 export const fetchLikes = () =>
   fetch(likesUrl, getRequest).then(parseData).catch(catchError);
@@ -47,7 +52,6 @@ export const loginUser = (arg) =>
   })
     .then(parseData)
     .catch(catchError);
-
 
 export const newLike = (arg1, arg2, arg3) =>
   fetch(likesUrl, {

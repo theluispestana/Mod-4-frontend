@@ -1,6 +1,7 @@
 import React from "react";
 import TopicContainer from "./TopicContainer";
-import Sidebar from "../components/sidebar";
+import NavBar from "../components/NavBar";
+import Sidebar from "../components/Sidebar";
 
 class Container extends React.Component {
   render() {

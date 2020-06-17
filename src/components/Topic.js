@@ -1,9 +1,10 @@
 import React from "react";
 import CommentContainer from "../containers/CommentContainer";
 import { render } from "@testing-library/react";
+import { Link } from "react-router-dom";
 import * as requests from "../requests";
 
-class Topic extends React.Component{
+class Topic extends React.Component {
   state = {
     likesCount: 0,
     dislikeCount: 0,
@@ -13,7 +14,7 @@ class Topic extends React.Component{
     waterPercent: 0,
   }
 
-  componentDidMount(){
+  componentDidMount() {
     requests.fetchLikes().then((likes) =>
     this.setState({ 
       likesCount: (likes.filter(like => like.topic_id === this.props.topic.id)).length,
@@ -95,6 +96,12 @@ class Topic extends React.Component{
         <button className="btn btn-warning" onClick={() => this.handlerLike()}>Like</button> <span className='likesCount'>{likesCount}</span>
         <button className="btn btn-danger" onClick={() => this.handlerDisLike()}>DisLike</button> <span>{dislikeCount}</span>
         {/* {comments.length ? (
+        <button onClick={() => this.handlerLike()}>Like</button>{" "}
+        <span>{likesCount}</span>
+        {this.props.preview ? (
+          <Link to={`/topic/${id}`}>See Full Post</Link>
+        ) : null}
+        {comments.length ? (
           <CommentContainer
             key={comments[0].id}
             comments={comments}
@@ -134,7 +141,7 @@ class Topic extends React.Component{
         </div>
       </div>
     );
-  }    
-};
+  }
+}
 
 export default Topic;
