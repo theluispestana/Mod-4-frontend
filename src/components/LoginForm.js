@@ -17,8 +17,9 @@ class LoginForm extends React.Component {
     event.preventDefault();
 
     requests.loginUser(this.state).then((json) => {
-      console.log(json.jwt);
+      console.log(json);
       localStorage.setItem("token", json.jwt);
+      localStorage.setItem("userId", json.user.id);
       this.setState(this.state);
     });
   };
@@ -26,7 +27,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        {localStorage.token ? <Redirect to="/home" /> : null}
+        {/* {localStorage.token !== "null" ? <Redirect to="/home" /> : null} */}
         <form onChange={this.handleChange}>
           <input type="text" name="name" placeholder="Username" />
           <input type="password" name="password" placeholder="password" />

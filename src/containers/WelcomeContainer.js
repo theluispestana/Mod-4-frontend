@@ -1,6 +1,6 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
-import { BrowserRouter as link, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class WelcomeContainer extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class WelcomeContainer extends React.Component {
         <p>
           This is our website. Join a team and participate in the discussions
         </p>
-        <Link to={"/signup"}>Sign Up</Link>
+        <Link to="/signup">Sign Up</Link>
         <LoginForm />
       </div>
     );
