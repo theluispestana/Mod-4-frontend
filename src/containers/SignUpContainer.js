@@ -75,6 +75,7 @@ class SignUpContainer extends React.Component {
 
     return (
       <div className="SignUpContainer">
+        <strong><h1>Get to know which group you belong to!</h1></strong>
         {this.state.toggle ? "" : <strong>{welcome}</strong>}
         <div>
         {this.state.toggle ? "" : <img className="angPic" src="https://media1.tenor.com/images/9a0fa15717261d8be67c147711247132/tenor.gif?itemid=12553002"/> }

@@ -1,6 +1,6 @@
 import React from "react";
 import * as requests from "../requests";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 
 class NavBar extends React.Component {
   state = {
@@ -10,6 +10,12 @@ class NavBar extends React.Component {
   componentDidMount() {
     requests.fetchProfile().then((user) => this.setState({ user }));
   }
+
+  // handlerSignout = () => {
+  //   localStorage.clear()
+  //   const history = useHistory()
+  //   history.push('/')
+  // }
 
   render() {
     return (
@@ -33,33 +39,19 @@ class NavBar extends React.Component {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link
-                  to={{
-                    pathname: `/user/${this.state.user.id}`,
-                    state: { user: this.state.user, link: true, self: true },
-                  }}
-                >
+                <Link id='userlink' to={{ pathname: `/user/${this.state.user.id}`, state: { user: this.state.user, link: true, self: true }}}>
                   {this.state.user.name}
                 </Link>
-                <a className="nav-link" href={`/user/${this.state.user.id}`}>
-                  {this.state.user.name}
-                </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/home">
-                  Home
-                </a>
+                <a className="nav-link" href="/"> Log In </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Log In
-                </a>
+                <a className="nav-link" href="/signup">Sign up</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/signup">
-                  Sign up
-                </a>
-              </li>
+              {/* <li className="nav-item">
+                <button id='' className='btn btn-danger' onClick={this.handlerSignout}>Logout</button>
+                </li> */}
             </ul>
           </div>
         </nav>
