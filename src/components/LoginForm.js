@@ -20,6 +20,8 @@ class LoginForm extends React.Component {
       console.log(json);
       localStorage.setItem("token", json.jwt);
       localStorage.setItem("userId", json.user.id)
+      localStorage.setItem("userName", json.user.name)
+      localStorage.setItem("userGroup", json.user.group_id)
     });
   };
 

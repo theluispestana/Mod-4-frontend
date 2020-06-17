@@ -15,7 +15,7 @@ class TopicContainer extends React.Component {
     const topics = this.state.topics;
     // console.log("topics: ", topics);
     return (
-      <div >
+      <div className="container">
         {topics.map((topic) => (
           <div className="topic">
           <Topic key={topic.id} topic={topic} preview={true} />

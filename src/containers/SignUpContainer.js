@@ -63,9 +63,22 @@ class SignUpContainer extends React.Component {
   };
 
   render() {
+    const welcome = `It is set in a world that is divided into four nations based on the four elements of nature
+    the Water Tribes - which are located at the North and South Poles - the Fire Nation, the Earth Nation, 
+    and the Air Nomads. (As the name suggests, the Air Nomads had a nomadic society. 
+    However, they also operated out of four temples located in four corners of the world: 
+    the Northern, Southern, Eastern, and Western Air Temples). 
+    Many people have the ability to manipulate one of the four elements. 
+    This practice is known as bending. Only one person, known as the Avatar, can bend all four elements.
+    If you lived in the Avatar universe, would you be a Waterbender, an Earthbender, a Firebender, or an Airbender? 
+    Take the quiz to find out which bending nation you would belong to!!`
+
     return (
       <div className="SignUpContainer">
-        {this.state.toggle ? "" : "Welcome!"}
+        {this.state.toggle ? "" : <strong>{welcome}</strong>}
+        <div>
+        {this.state.toggle ? "" : <img className="angPic" src="https://media1.tenor.com/images/9a0fa15717261d8be67c147711247132/tenor.gif?itemid=12553002"/> }
+        </div>
         <div>
           {this.renderRedirect()}
           {this.state.toggle ? (
@@ -74,7 +87,7 @@ class SignUpContainer extends React.Component {
               handlerSubmit={this.handlerSubmit}
             />
           ) : (
-            <button onClick={this.handlerQuiz}>Take our Quiz</button>
+            <button className='btn-warning btn-lg' onClick={this.handlerQuiz}>Take our Quiz</button>
           )}
         </div>
       </div>

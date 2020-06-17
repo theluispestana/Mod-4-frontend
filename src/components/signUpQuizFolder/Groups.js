@@ -9,19 +9,22 @@ export default class Groups extends React.Component{
                 <h3>Now that you have your group, you can finish signing up below</h3>
                 <p>{this.props.group.description}</p>
                 <img className="groupImage" src={this.props.group.image} alt={this.props.group.name}/>
-                <form onSubmit={this.props.handlerSubmit} className="userForm">
                     <h1>Hello new User from the {this.props.group.name}!</h1>
-                    <h3>Follow along to finalize your sign up</h3>
-                    <ul>
-                        <li><input type='text' name="name" placeholder="Your Name"/> </li>
+                    <div>
+                        <h3>Follow along to finalize your sign up</h3>
+                    </div>
+                <ul className="formCenter">
+                    <form onSubmit={this.props.handlerSubmit} className="">
+                        <li><input type='text' name="name" placeholder="Enter Your Name"/></li>
                         <li><input type='password' name="password" placeholder="Password"/></li>
                         <li><input type='password' name="confirmation" placeholder="Confirm Password"/></li>
                         <li><input type='number' name="age" placeholder="Your Age"/></li>
                         <li><input type='number' name="zipcode" placeholder="Your Zipcode"/></li>
                         <li><input type='text' name="image" placeholder="Your Picture (optional)"/></li>
-                        <input type='submit'/>
-                    </ul>
-                </form>
+                        
+                        <li><input type='submit'/></li>
+                    </form>
+                </ul>
             </div>
         )
     }

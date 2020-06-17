@@ -164,7 +164,7 @@ export default class Quiz extends React.Component {
           {/*check if the user is at the last question, 
           if not show the next button if yes show finish button */}
           {currentQuestion < quizData.length - 1 && (
-            <button className="ui inverted button" disabled={this.state.disabled} 
+            <button className="btn-default btn-lg" disabled={this.state.disabled} 
             onClick={this.nextQuestionHandler}>
               Next
             </button>
@@ -172,7 +172,7 @@ export default class Quiz extends React.Component {
 
           {/*adding a finish button when we are at the last question*/}
           {currentQuestion === quizData.length - 1 && (
-            <button className="ui inverted button" onClick={this.finishHandler}>
+            <button className="btn-success" onClick={this.finishHandler}>
               Finish
             </button>
           )}
