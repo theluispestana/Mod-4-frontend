@@ -202,38 +202,26 @@ class Topic extends React.Component {
     }
   };
 
-  render() {
-    const {
-      title,
-      content,
-      image: imageUrl,
-      created_at: createdAt,
-      comments,
-    } = this.props.topic;
-    const { likesCount, dislikeCount } = this.state;
-
+  render(){
+    const {title, content, image: imageUrl, comments, id} = this.props.topic;
+    const {likesCount, dislikeCount} = this.state
+    
     return (
       <div className="list-group-item">
         <h1 className="list-group-item-heading">{title}</h1>
         <p className="list-group-item-text">{content}</p>
-        {imageUrl ? <img src={imageUrl} /> : null}
-        <button className="btn btn-warning" onClick={() => this.handlerLike()}>
-          Like
-        </button>{" "}
-        <span className="likesCount">{likesCount}</span>
-        <button
-          className="btn btn-danger"
-          onClick={() => this.handlerDisLike()}
-        >
-          DisLike
-        </button>{" "}
-        <span>{dislikeCount}</span>
+        {imageUrl ? <img className="topicImg" src={imageUrl} /> : null}
+        <div id="likeDislikeBtn">
+          <button className="btn btn-warning" onClick={() => this.handlerLike()}>Agree</button> <span className='likesCount'>{likesCount}</span>
+          <button className="btn btn-danger" onClick={() => this.handlerDisLike()}>Disagree</button> <span>{dislikeCount}</span>
+        </div>
         {/* {comments.length ? (
-        <button onClick={() => this.handlerLike()}>Like</button>{" "}
-        <span>{likesCount}</span>
-        {this.props.preview ? (
-          <Link to={`/topic/${id}`}>See Full Post</Link>
-        ) : null}
+        <button onClick={() => this.handlerLike()}>Like</button>
+        <span>{likesCount}</span> */}
+        
+        <div>
+        {this.props.preview ? (<Link to={`/topic/${id}`}>See Full Post</Link>) : null}
+        </div>
         {comments.length ? (
           <CommentContainer
             key={comments[0].id}
@@ -242,7 +230,9 @@ class Topic extends React.Component {
           />
         ) : (
           "No Comments to Display"
-        )} */}
+        )}
+
+
         <div className="progressBarContainer">
           <div className="progress progress-bar-vertical">
             <div
@@ -293,7 +283,7 @@ class Topic extends React.Component {
           </div>
         </div>
       </div>
-    );
+    );       
   }
 }
 

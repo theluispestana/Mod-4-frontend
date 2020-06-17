@@ -12,14 +12,14 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      {/* <NavBar /> */}
+      <NavBar />
       <Route exact path="/" component={WelcomeContainer} />
       <Route exact path="/signup" component={SignUpContainer} />
-      <Route
+      {/* <Route
         exact
-        path={["/home", "/topic/:id", "/user/:id"]}
+        path={["/home", "/topic/:id", "/user/:id", "/signup"]}
         component={NavBar}
-      />
+      /> */}
       <Route exact path="/home" component={HomeContainer} />
       <Route exact path="/topic/:id" component={TopicShowContainer} />
       <Route exact path="/user/:id" component={User} />
