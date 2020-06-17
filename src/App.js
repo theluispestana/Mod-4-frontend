@@ -6,6 +6,7 @@ import WelcomeContainer from "./containers/WelcomeContainer";
 import SignUpContainer from "./containers/SignUpContainer";
 import HomeContainer from "./containers/HomeContainer";
 import TopicShowContainer from "./containers/TopicShowContainer";
+import User from "./components/User";
 import "./App.css";
 
 function App() {

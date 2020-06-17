@@ -6,3 +6,5 @@ class User extends React.Component {
     return <div></div>;
   }
 }
+
+export default User;
