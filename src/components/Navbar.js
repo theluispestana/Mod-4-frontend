@@ -41,9 +41,9 @@ class NavBar extends React.Component {
                 >
                   {this.state.user.name}
                 </Link>
-                <a className="nav-link" href={`/user/${this.state.user.id}`}>
-                  {this.state.user.name}
-                </a>
+                {/* <a className="nav-link" href={`/user/${this.state.user.id}`}> */}
+                {/*   {this.state.user.name} */}
+                {/* </a> */}
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/home">
