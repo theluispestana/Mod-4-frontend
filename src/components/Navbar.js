@@ -15,7 +15,10 @@ class NavBar extends React.Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand">!001 Topics</a>
+          <a className="navbar-brand">
+            <Link to="/home">!001 Topics</Link>
+          </a>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -30,8 +33,12 @@ class NavBar extends React.Component {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/home">Home</Link>
-                <Link to={`/user/${this.state.user.id}`}>
+                <Link
+                  to={{
+                    pathname: `/user/${this.state.user.id}`,
+                    state: { user: this.state.user, link: true, self: true },
+                  }}
+                >
                   {this.state.user.name}
                 </Link>
               </li>

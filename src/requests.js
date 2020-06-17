@@ -3,6 +3,8 @@ const baseUrl = "http://localhost:3000";
 const topicsUrl = `${baseUrl}/topics/`;
 const authUrl = `${baseUrl}/login/`;
 const likesUrl = `${baseUrl}/likes/`;
+const userUrl = `${baseUrl}/user/`;
+const usersUrl = `${baseUrl}/users/`;
 const profileUrl = `${baseUrl}/profile/`;
 const dislikesUrl = `${baseUrl}/dislikes`;
 
@@ -45,6 +47,21 @@ export const fetchLikes = () =>
 
 export const fetchProfile = () =>
   fetch(profileUrl, getRequest).then(parseData).catch(catchError);
+
+export const fetchUser = (id) =>
+  fetch(usersUrl + id, getRequest)
+    .then(parseData)
+    .catch(catchError);
+
+export const patchUser = (user) => {
+  return fetch(usersUrl + user.id, {
+    method: "PATCH",
+    headers: headersAuth,
+    body: JSON.stringify({ user: user }),
+  })
+    .then(parseData)
+    .catch(catchError);
+};
 
 export const fetchDisLikes = () =>
   fetch(dislikesUrl, getRequest).then(parseData).catch(catchError);
