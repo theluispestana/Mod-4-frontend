@@ -46,7 +46,7 @@ export const fetchLikes = () =>
   fetch(likesUrl, getRequest).then(parseData).catch(catchError);
 
 export const fetchProfile = () =>
-  fetch(profileUrl, getRequest).then(parseData).catch(catchError);
+  fetch(profileUrl, getRequest).then(res => console.log(getRequest)).catch(catchError);
 
 export const fetchUser = (id) =>
   fetch(usersUrl + id, getRequest)

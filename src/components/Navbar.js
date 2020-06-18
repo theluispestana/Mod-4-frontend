@@ -4,25 +4,21 @@ import { Link, Redirect } from "react-router-dom";
 
 class NavBar extends React.Component {
   state = {
-    user: {},
-    dummy: false
-  };
+    user: {}
+    };
 
   componentDidMount() {
-    requests.fetchProfile().then((user) => this.setState({ user }));
+  fetch('http://localhost:3000/profile/', {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Accepts: "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`
+    }
+  }).then(res => res.json())
+  .then(user => this.setState({ user }))
+  // console.log("localStorage", localStorage.getItem('token'))
   }
-
-  // handlerSignout = () => {
-  //   localStorage.clear()
-  //   alert('You have looged out')
-  //   return <Redirect to='/'/>
-  // }
-
-  // handlerSignoutHelp = () =>{
-  //   if(localStorage !== 'something'){
-  //     return <Redirect to='/'/>
-  //   }
-  // }
 
   render() {
     return (
