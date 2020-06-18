@@ -32,22 +32,10 @@ class NavBar extends React.Component {
             <Link to="/home">!001 Topics</Link>
           </div>
 
-<<<<<<< HEAD
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-=======
           {/* button for when window gets smaller */}
           <button className="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
             aria-label="Toggle navigation">
->>>>>>> wed
             <span className="navbar-toggler-icon"></span>
           </button>
 
@@ -72,17 +60,17 @@ class NavBar extends React.Component {
                   Home
                 </a>
               </li> */}
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link" href="/">
                   {" "}
                   Log In{" "}
                 </a>
-              </li>
-              <li className="nav-item">
+              </li> */}
+              {/* <li className="nav-item">
                 <a className="nav-link" href="/signup">
                   Sign up
                 </a>
-              </li>
+              </li> */}
               {/* <li className="nav-item">
                 <button id='logOutBtn' className='btn btn-danger' onClick={() => this.handlerSignout()}>Logout</button>
                 </li> */}
