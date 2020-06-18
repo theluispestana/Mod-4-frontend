@@ -21,9 +21,9 @@ class NavBar extends React.Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand">
+          <div className="navbar-brand">
             <Link to="/home">!001 Topics</Link>
-          </a>
+          </div>
 
           <button
             className="navbar-toggler"
@@ -52,11 +52,11 @@ class NavBar extends React.Component {
                 {/*   {this.state.user.name} */}
                 {/* </a> */}
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link" href="/home">
                   Home
                 </a>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <a className="nav-link" href="/">
                   {" "}
