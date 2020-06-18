@@ -16,9 +16,9 @@ function App() {
       <Route exact path="/" component={WelcomeContainer} />
       <Route exact path="/signup" component={SignUpContainer} />
       {/* <Route
-        exact
-        path={["/home", "/topic/:id", "/user/:id", "/signup"]}
         component={NavBar}
+        exact
+        path={["/home", "/topic/:id", "/user/:id"]}
       /> */}
       <Route exact path="/home" component={HomeContainer} />
       <Route exact path="/topic/:id" component={TopicShowContainer} />

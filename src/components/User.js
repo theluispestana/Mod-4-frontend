@@ -97,7 +97,7 @@ class User extends React.Component {
 
   render() {
     // console.log("props: ", this.props.location.state);
-    console.log("user state: ", this.state.user);
+    // console.log("user state: ", this.state.user);
     return (
       <div>
         {!this.state.edit ? this.renderProfile() : this.renderEditInputs()}

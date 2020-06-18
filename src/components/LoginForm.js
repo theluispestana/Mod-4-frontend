@@ -17,7 +17,11 @@ class LoginForm extends React.Component {
     event.preventDefault();
 
     requests.loginUser(this.state).then((json) => {
-      console.log(json);
+      if(json.message){
+        alert(json.message)
+        return <Redirect to='/'/>
+      }
+      
       localStorage.setItem("token", json.jwt);
       localStorage.setItem("userId", json.user.id);
       localStorage.setItem("userName", json.user.name);
