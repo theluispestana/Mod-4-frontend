@@ -21,20 +21,18 @@ class LoginForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    requests
-      .loginUser(this.state.user)
-      .then((json) => {
-        console.log(json);
-        localStorage.setItem("token", json.jwt);
-        localStorage.setItem("userId", json.user.id);
-        localStorage.setItem("userName", json.user.name);
-        localStorage.setItem("userGroup", json.user.group_id);
-        this.setState(this.state);
-      })
-      .catch((err) => {
-        localStorage.clear();
-        this.setState({ error: !this.state.error });
-      });
+    requests.loginUser(this.state.user).then((json) => {
+      if(json.message){
+        alert(json.message)
+        return <Redirect to='/'/>
+      }
+      
+      localStorage.setItem("token", json.jwt);
+      localStorage.setItem("userId", json.user.id);
+      localStorage.setItem("userName", json.user.name);
+      localStorage.setItem("userGroup", json.user.group_id);
+      this.setState(this.state);
+    });
   };
 
   render() {

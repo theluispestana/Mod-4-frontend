@@ -15,7 +15,7 @@ class TopicShowContainer extends React.Component {
   }
 
   render() {
-    console.log("topic: ", this.state.topic);
+    // console.log("topic: ", this.state.topic);
     return (
       <div>
         {this.state.topic.id ? (

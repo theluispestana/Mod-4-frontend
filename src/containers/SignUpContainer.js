@@ -21,6 +21,13 @@ class SignUpContainer extends React.Component {
     }
   };
 
+  checkToken = () =>{
+    const token = localStorage.getItem('token')
+    if( (token !== null) ){
+      return <Redirect to='/home'/>
+    }
+  }
+
   handlerGroup = (groupData) => {
     this.setState({
       group: groupData,
@@ -75,6 +82,7 @@ class SignUpContainer extends React.Component {
 
     return (
       <div className="SignUpContainer">
+        {this.checkToken()}
         <strong><h1>Get to know which group you belong to!</h1></strong>
         {this.state.toggle ? "" : <strong>{welcome}</strong>}
         <div>

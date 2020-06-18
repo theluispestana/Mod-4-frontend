@@ -17,7 +17,7 @@ function App() {
       <NavBar />
       <Route exact path="/" component={WelcomeContainer} />
       <Route exact path="/signup" component={SignUpContainer} />
-      {authenticated ? (
+      {/* {authenticated ? (
         <>
           <Route exact path="/home" component={HomeContainer} />
           <Route exact path="/topic/:id" component={TopicShowContainer} />
@@ -25,7 +25,15 @@ function App() {
         </>
       ) : (
         <Redirect to="/" />
-      )}
+      )} */}
+      {/* <Route
+        component={NavBar}
+        exact
+        path={["/home", "/topic/:id", "/user/:id"]}
+      /> */}
+      <Route exact path="/home" component={HomeContainer} />
+      <Route exact path="/topic/:id" component={TopicShowContainer} />
+      <Route exact path="/user/:id" component={User} />
     </Router>
   );
 }

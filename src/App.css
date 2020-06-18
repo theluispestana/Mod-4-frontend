@@ -189,11 +189,6 @@ ul {
   left: 860px;
 }
 
-#userlink {
-  position: absolute;
-  margin-top: 7px;
-  right: 15px;
-}
 
 .userProfileDiv{
   text-align: center;
@@ -229,4 +224,16 @@ ul {
 
 #EditForm {
   text-align: center;
+}
+
+#userlink {
+  position: absolute;
+  margin-top: 7px;
+  right: 15px;
+}
+
+#logOutBtn {
+  position: absolute;
+  right: 100px;
+  top: 10px;
 }
