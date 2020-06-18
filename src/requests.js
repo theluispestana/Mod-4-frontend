@@ -73,9 +73,8 @@ export const loginUser = (body) =>
     method: "POST",
     headers: headers,
     body: JSON.stringify({ user: body }),
-  })
-    .then(parseData)
-    .catch(catchError);
+  }).then(parseData);
+// .catch(catchError);
 
 export const newLike = (arg1, arg2, arg3) =>
   fetch(likesUrl, {
